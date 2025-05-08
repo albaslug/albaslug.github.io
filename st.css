@@ -1,0 +1,316 @@
+:root {
+    --bg-color: #0a0e17;
+    --bg-color-rgb: 10, 14, 23;
+    --text-color: #e6e6e8;
+    --text-color-rgb: 230, 230, 232;
+    --accent-color: #5c8ec7;
+    --accent-color-rgb: 92, 142, 199;
+    --subtle-color: #374151;
+    --timestamp-color: #7f9ccc;
+    --header-color: #c4d5f5;
+    --weaver-msg-color: #9fa9bf;
+    --soundtrack-bg: rgba(10, 14, 23, 0.8);
+    --soundtrack-border: #2c4a7c;
+    --font-main: 'Georgia', serif;
+    --font-timestamp: 'Courier New', monospace;
+    --max-width: 800px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+    min-height: 100vh;
+    position: relative;
+}
+
+.pattern-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.07;
+    pointer-events: none;
+}
+
+.pattern-line {
+    position: absolute;
+    background: var(--accent-color);
+    transform-origin: center;
+    opacity: 0.2;
+    transition: opacity 3s ease;
+}
+
+
+body.light-mode {
+    --bg-color: #f7f7f8;
+    --bg-color-rgb: 247, 247, 248;
+    --text-color: #1a1a1c;
+    --text-color-rgb: 26, 26, 28;
+    --accent-color: #2c6baf;
+    --accent-color-rgb: 44, 107, 175;
+    --subtle-color: #d1d5db;
+    --timestamp-color: #4d6ca6;
+    --header-color: #2c4a7c;
+    --weaver-msg-color: #4a5366;
+    --soundtrack-bg: rgba(247, 247, 248, 0.8);
+    --soundtrack-border: #8ab6f5;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+header {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--header-color);
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-tag {
+    font-family: var(--font-timestamp);
+    font-size: 0.85rem;
+    color: var(--timestamp-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+
+.story {
+    position: relative;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+ol {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.timestamp {
+    font-family: var(--font-timestamp);
+    color: var(--timestamp-color);
+    font-weight: bold;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--subtle-color);
+    position: relative;
+    white-space: nowrap;
+}
+
+.digit {
+    display: inline-block;
+    position: relative;
+}
+
+.corruptible {
+    position: relative;
+    white-space: pre-wrap;
+}
+
+.bonk {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    color: rgba(var(--text-color-rgb), 0.85);
+    font-style: italic;
+    border-radius: 2px;
+    background: linear-gradient(135deg,
+    rgba(var(--bg-color-rgb), 0.7) 0%,
+    rgba(var(--bg-color-rgb), 0.9) 100%);
+    box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.1);
+    backdrop-filter: blur(3px);
+    transition: all 0.5s ease;
+    text-shadow: 0 0 3px rgba(var(--text-color-rgb), 0.3);
+    overflow: hidden;
+}
+
+.bonk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(60deg,
+    rgba(var(--accent-color-rgb), 0.03) 0px,
+    rgba(var(--accent-color-rgb), 0.03) 1px,
+    transparent 1px,
+    transparent 10px),
+    radial-gradient(
+            circle at 50% 50%,
+            rgba(var(--accent-color-rgb), 0.05) 0%,
+            transparent 60%);
+    z-index: -1;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.weaver-message {
+    color: var(--weaver-msg-color);
+    font-style: italic;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-color);
+}
+
+.epilogue {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--subtle-color);
+    font-style: italic;
+}
+
+.alternate-timeline {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.alternate-timeline a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.alternate-timeline a:hover {
+    color: var(--header-color);
+}
+
+.alternate-timeline a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.alternate-timeline a:hover::after {
+    transform: scaleX(1);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+@media (max-width: 850px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .timestamp {
+        margin: 2rem 0 0.75rem;
+    }
+}
+
+.metadata-badge {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    background: var(--bg-color);
+    border: 1px solid var(--subtle-color);
+    border-right: none;
+    padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+    font-family: var(--font-timestamp);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    transform: translateX(0.5rem);
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.15);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    z-index: 10;
+    max-width: 220px;
+    transition: all 0.3s ease;
+}
+
+.metadata-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-color);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.metadata-item {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.metadata-label {
+    color: var(--timestamp-color);
+    margin-right: 0.5rem;
+}
+
+.metadata-value {
+    color: var(--accent-color);
+}
+
+.metadata-value a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.metadata-value a:hover {
+    color: var(--header-color);
+}
