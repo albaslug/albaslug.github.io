@@ -266,7 +266,7 @@ ol {
 
 .metadata-badge {
     position: absolute;
-    top: 4rem;
+    top: 3rem;
     right: 0;
     background: var(--bg-color);
     border: 1px solid var(--subtle-color);
