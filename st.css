@@ -246,7 +246,7 @@ ol {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
@@ -257,6 +257,10 @@ ol {
 
     .timestamp {
         margin: 2rem 0 0.75rem;
+    }
+
+    .metadata-badge {
+        display: none;
     }
 }
 
