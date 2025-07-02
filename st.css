@@ -262,6 +262,10 @@ ol {
     .metadata-badge {
         display: none;
     }
+
+    .theme-toggle {
+        display: none;
+    }
 }
 
 .metadata-badge {
