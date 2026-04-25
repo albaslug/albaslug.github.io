@@ -23,7 +23,7 @@ body {
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
     min-height: 100vh;
     position: relative;
 }
@@ -197,6 +197,7 @@ ol {
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
+    display: inline-block;
 }
 
 .alternate-timeline a:hover {
@@ -211,12 +212,12 @@ ol {
     bottom: -2px;
     left: 0;
     background-color: var(--accent-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transform: scaleX(1);
+    transition: background-color 0.3s ease;
 }
 
 .alternate-timeline a:hover::after {
-    transform: scaleX(1);
+    background-color: var(--header-color);
 }
 
 .theme-toggle {
