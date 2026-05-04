@@ -180,12 +180,6 @@ ol {
     border-left: 2px solid var(--accent-color);
 }
 
-.urgent-pattern {
-    color: var(--header-color);
-    font-weight: bold;
-    text-shadow: 0 0 6px rgba(var(--accent-color-rgb), 0.4);
-}
-
 .epilogue {
     margin-top: 2rem;
     padding-top: 2rem;
